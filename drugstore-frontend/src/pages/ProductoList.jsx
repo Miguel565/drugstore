@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { createProducto, deleteProducto } from '../../reducers/productoReducer'
+import { createProducto, deleteProducto } from '../reducers/productoReducer'
 import { Card, Container, Table, Button, Modal, Form } from "react-bootstrap"
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
-import proveedorService from "../services/producto"
+import productoService from "../services/productos"
 
 const productoSlice = createSlice({
     name: 'productos',
@@ -20,29 +20,29 @@ const productoSlice = createSlice({
 
 export const initializeProductos = () => {
     return async dispatch => {
-        const proveedores = await proveedorService.getAll()
+        const proveedores = await productoService.getAll()
         dispatch(setProductos(proveedores))
     }
 }
 
 export const createProducto = (producto) => {
     return async dispatch => {
-        const newProducto = await proveedorService.create(producto)
+        const newProducto = await productoService.create(producto)
         dispatch(appendProducto(newProducto))
     }
 }
 
 export const modifyProducto = (id, producto) => {
     return async dispatch => {
-        const updatedProducto = await proveedorService.update(id, producto)
+        const updatedProducto = await productoService.update(id, producto)
         dispatch(updateProducto(updatedProducto))
     }
 }
 
 export const deleteProducto = (id) => {
     return async dispatch => {
-        await proveedorService.remove(id)
-        const proveedores = await proveedorService.getAll()
+        await productoService.remove(id)
+        const proveedores = await productoService.getAll()
         dispatch(setProductos(proveedores))
     }
 }

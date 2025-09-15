@@ -20,7 +20,7 @@ function App() {
         <Route path="/proveedores" element={<ProveedorList />} />
         <Route path="/productos" element={<ProductoList />} />
         <Route path="/registros" element={<div>Registros</div>} />
-        <Rpute path= "/proveedor/:id" element={<Proveedor />} />
+        <Route path= "/proveedor/:id" element={<Proveedor />} />
         <Route path= "/producto/:id" element={<Producto />} />
       </Routes>
       <Footer />
