@@ -1,5 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
-import proveedorService from "../services/proveedores";
+import { createSlice } from "@reduxjs/toolkit"
+import proveedorService from "../services/proveedores"
 
 const proveedorSlice = createSlice({
     name: 'proveedores',
