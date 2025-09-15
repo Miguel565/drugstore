@@ -1,0 +1,47 @@
+### AL ###
+#Template for AL projects for Dynamics 365 Business Central
+# Logs
+logs
+*.log
+npm-debug.losg*
+yarn-debug.log*
+
+#Optional npm cache directory
+.npm
+
+# Optinoal eslint, stylelint cache
+.eslintcache
+.stylelintcache
+
+# Serverless directory
+.Serverless/
+
+# Visual Studio Code settings
+.vscode/
+
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+#Dependency directories
+node_modules/
+jspm_packages/
+#Cache folder
+.alcache/
+#Symbols folder
+.alpackages/
+#Snapshots folder
+.snapshots/
+#Testing Output folder
+.output/
+#Extension App-file
+*.app
+#Rapid Application Development File
+rad.json
+#Translation Base-file
+*.g.xlf
+#License-file
+*.flf
