@@ -1,6 +1,15 @@
+import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { initializeProveedores } from '../reducers/proveedorReducer'
 
 const NavBar = () => {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(initializeProveedores())
+    }, [dispatch])
+
 	 return (
 		 <nav>
 			 <ul style={{ display: 'flex', listStyle: 'none', padding: 0, margin: 0 }}>
