@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { useDispatch} from 'react-redux';
 import { initializeProductos } from '../reducers/productoReducer';
 import { initializeProveedores } from '../reducers/proveedorReducer';
+import { initializeRegistros } from '../reducers/registroReducer';
 
 const Dashboard = () => {
 
@@ -12,6 +13,7 @@ const Dashboard = () => {
     useEffect(() => {
         dispatch(initializeProductos())
         dispatch(initializeProveedores())
+        dispatch(initializeRegistros())
     }, [dispatch])
 
     return (

@@ -20,7 +20,7 @@ const registroSlice = createSlice({
     }
 })
 
-export const initializeProductos = () => {
+export const initializeRegistros = () => {
     return async dispatch => {
         const registros = await registroService.getAll()
         dispatch(setRegistros(registros))
