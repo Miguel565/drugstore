@@ -124,7 +124,7 @@ const ProveedorList = () => {
                                             </Button>
                                         </td>
                                     </tr>)
-                                    )
+                                )
                                 )}
                             </tbody>
                         </Table>

@@ -96,9 +96,7 @@ const ProductoList = () => {
                                     <th width="10%">Fecha Vence</th>
                                     <th width="8%">Stock</th>
                                     <th width="12%">Laboratorio</th>
-                                    <th className="text-center">
-                                        <i className="fas fa-cog"></i>
-                                    </th>
+                                    <th className="text-center">Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
