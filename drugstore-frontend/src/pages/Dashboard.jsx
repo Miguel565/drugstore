@@ -1,7 +1,19 @@
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
+import { useEffect } from 'react';
+import { useDispatch} from 'react-redux';
+import { initializeProductos } from '../reducers/productoReducer';
+import { initializeProveedores } from '../reducers/proveedorReducer';
 
 const Dashboard = () => {
+
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(initializeProductos())
+        dispatch(initializeProveedores())
+    }, [dispatch])
+
     return (
         <Container className="py-4">
             <Card>
