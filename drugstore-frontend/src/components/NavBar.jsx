@@ -1,33 +1,24 @@
-import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
+import { Navbar, Nav, Container } from "react-bootstrap"
 import { Link } from 'react-router-dom'
-import { initializeProveedores } from '../reducers/proveedorReducer'
 
 const NavBar = () => {
-    const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(initializeProveedores())
-    }, [dispatch])
-
-	 return (
-		 <nav>
-			 <ul style={{ display: 'flex', listStyle: 'none', padding: 0, margin: 0 }}>
-				 <li style={{ marginRight: '1rem' }}>
-					 <Link to="/">Dashboard</Link>
-				 </li>
-				 <li style={{ marginRight: '1rem' }}>
-					 <Link to="/proveedores">Proveedores</Link>
-				 </li>
-				 <li style={{ marginRight: '1rem' }}>
-					 <Link to="/productos">Inventario</Link>
-				 </li>
-				 <li>
-					 <Link to="/registros">Registros</Link>
-				 </li>
-			 </ul>
-		 </nav>
-	 );
+	return (
+		<Navbar bg="light" expand="lg" >
+			<Container>
+				<Navbar.Brand as={Link} to="/"></Navbar.Brand>
+				<Navbar.Toggle aria-controls="main-navbar" />
+				<Navbar.Collapse id="main-navbar" className="justify-content-center">
+					<Nav>
+						<Nav.Link as={Link} to="/">Dashboard</Nav.Link>
+						<Nav.Link as={Link} to="/proveedores">Proveedores</Nav.Link>
+						<Nav.Link as={Link} to="/productos">Inventario</Nav.Link>
+						<Nav.Link as={Link} to="/registros">Registros</Nav.Link>
+					</Nav>
+				</Navbar.Collapse>
+			</Container>
+		</Navbar >
+	);
 }
 
 export default NavBar
