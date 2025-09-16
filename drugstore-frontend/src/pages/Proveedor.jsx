@@ -11,9 +11,9 @@ import { useState } from "react"
 
 const Proveedor = () => {
     const { id } = useParams();
-  const proveedor = useSelector(state =>
-    state.proveedores.find(p => p.id === Number(id))
-  );
+    const proveedor = useSelector(state =>
+        state.proveedores.find(p => p.id === Number(id))
+    );
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const MySwal = swalContent(Swal)
@@ -71,8 +71,8 @@ const Proveedor = () => {
             <Card>
                 <Card.Body>
                     <h2>Detalle del Proveedor</h2>
-                    <h3>{proveedor.razon_Social}</h3>
-                    <p>{proveedor.tipo_identificacion} {proveedor.numero_identificacion}</p>
+                    <h3>{proveedor.razon_social}</h3>
+                    <p>{proveedor.tipo_identificacion}: {proveedor.numero_identificacion}</p>
                     <p>Contacto: {proveedor.nombre_contacto}</p>
                     <p>Numero Celular: {proveedor.celular_contacto} </p>
                     <p>Dirección: {proveedor.direccion} </p>
@@ -92,39 +92,34 @@ const Proveedor = () => {
                         {formError && <div className="alert alert-danger">{formError}</div>}
                         <Form.Group className="mb-3">
                             <Form.Label>Tipo de Identidad</Form.Label>
-                            <Form.Control
-                                type="text"
-                                name="tipoIdentidad"
-                                value={form.tipoIdentidad}
+                            <Form.Select
+                                name="tipo_identificacion"
+                                value={form.tipo_identificacion}
                                 onChange={handleChange}
                                 required
-                            />
+                            >
+                                <option value="">Seleccione...</option>
+                                <option value="dni">DNI</option>
+                                <option value="cedula">Cédula</option>
+                                <option value="pasaporte">Pasaporte</option>
+                            </Form.Select>
                         </Form.Group>
                         <Form.Group className="mb-3">
                             <Form.Label>Número de Identidad</Form.Label>
                             <Form.Control
                                 type="text"
-                                name="numeroIdentidad"
-                                value={form.numeroIdentidad}
+                                name="numero_identificacion"
+                                value={form.numero_identificacion}
                                 onChange={handleChange}
                                 required
                             />
                         </Form.Group>
                         <Form.Group className="mb-3">
-                            <Form.Label>Razón Social</Form.Label>
+                            <Form.Label>Razón Social/NOMBRE</Form.Label>
                             <Form.Control
                                 type="text"
-                                name="razonSocial"
-                                value={form.razonSocial}
-                                onChange={handleChange}
-                            />
-                        </Form.Group>
-                        <Form.Group className="mb-3">
-                            <Form.Label>Nombre</Form.Label>
-                            <Form.Control
-                                type="text"
-                                name="nombre"
-                                value={form.nombre}
+                                name="razon_social"
+                                value={form.razon_social}
                                 onChange={handleChange}
                             />
                         </Form.Group>
@@ -142,8 +137,8 @@ const Proveedor = () => {
                             <Form.Label>Nombre Contacto</Form.Label>
                             <Form.Control
                                 type="text"
-                                name="nombreContacto"
-                                value={form.nombreContacto}
+                                name="nombre_contacto"
+                                value={form.nombre_contacto}
                                 onChange={handleChange}
                                 required
                             />
@@ -152,8 +147,8 @@ const Proveedor = () => {
                             <Form.Label>Número de Celular</Form.Label>
                             <Form.Control
                                 type="text"
-                                name="numeroCelular"
-                                value={form.numeroCelular}
+                                name="celular_contacto"
+                                value={form.celular_contacto}
                                 onChange={handleChange}
                                 required
                             />
@@ -172,8 +167,8 @@ const Proveedor = () => {
                             <Form.Label>Actividad Económica</Form.Label>
                             <Form.Control
                                 type="text"
-                                name="actividadEconomica"
-                                value={form.actividadEconomica}
+                                name="actividad_economica"
+                                value={form.actividad_economica}
                                 onChange={handleChange}
                                 required
                             />

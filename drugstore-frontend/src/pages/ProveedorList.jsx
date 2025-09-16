@@ -113,7 +113,7 @@ const ProveedorList = () => {
                                         <td>{proveedor.actividad_economica}</td>
                                         <td className="text-center" width="15%">
                                             <Link
-                                                to={`/producto/${proveedor.id}`}
+                                                to={`/proveedores/${proveedor.id}`}
                                                 className="btn btn-primary px-4 py-2 fs-6 me-2"
                                                 size="lg"
                                                 aria-label="Editar producto"
