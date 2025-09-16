@@ -188,5 +188,5 @@ Tamto para el Back-end y Front-end:
    - Crear un nuevo Web Static en Render.com
    - Conectar el repositorio GitHub
    - Configurar las variables de entorno en el panel de Render
-   - Deploy automático 
-   -[Despliegue Front-end](https://drugstore-ytuy.onrender.com)
+   - Deploy automático
+   - [Despliegue Front-end](https://drugstore-ytuy.onrender.com)
