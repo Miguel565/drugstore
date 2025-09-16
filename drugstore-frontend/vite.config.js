@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:3001',
+        target: import.meta.env.VITE_API_URL,
         changeOrigin: true,
       }
     },
