@@ -5,22 +5,27 @@ import { useState } from "react";
 import { createProveedor, deleteProveedor } from "../reducers/proveedorReducer";
 import Swal from 'sweetalert2';
 import swalContent from 'sweetalert2-react-content';
+import { useEffect } from 'react'
+import { initializeProveedores } from '../reducers/proveedorReducer'
 
 const ProveedorList = () => {
     const proveedores = useSelector(state => state.proveedores);
     const dispatch = useDispatch();
     const MySwal = swalContent(Swal);
 
+    useEffect(() => {
+        dispatch(initializeProveedores())
+    }, [dispatch])
+
     const initialForm = {
-        tipoIdentidad: '',
-        numeroIdentidad: '',
-        razonSocial: '',
-        nombre: '',
+        tipo_identificacion: '',
+        numero_identificacion: '',
+        razon_social: '',
         direccion: '',
-        nombreContacto: '',
-        numeroCelular: '',
+        nombre_contacto: '',
+        celular_contacto: '',
         email: '',
-        actividadEconomica: ''
+        actividad_economica: ''
     }
 
     const [showModal, setShowModal] = useState(false);
@@ -58,7 +63,7 @@ const ProveedorList = () => {
     const handleDelete = (proveedor) => {
         MySwal.fire({
             title: '¿Estás seguro?',
-            text: `¿Deseas eliminar al proveedor ${proveedor.razonSocial || proveedor.nombre}?`,
+            text: `¿Deseas eliminar al proveedor ${proveedor.razonSocial}?`,
             icon: 'warning',
             showCancelButton: true,
             confirmButtonText: 'Sí, eliminar',
@@ -98,25 +103,27 @@ const ProveedorList = () => {
                                     </tr>
                                 ) : (proveedores?.map(proveedor => (
                                     <tr key={proveedor.id}>
-                                        <td>{proveedor.tipoIdentidad}</td>
-                                        <td>{proveedor.numeroIdentidad}</td>
-                                        <td>{proveedor.razonSocial || proveedor.nombre}</td>
+                                        <td>{proveedor.tipo_identificacion}</td>
+                                        <td>{proveedor.numero_identificacion}</td>
+                                        <td>{proveedor.razon_social}</td>
                                         <td>{proveedor.direccion}</td>
-                                        <td>{proveedor.nombreContacto}</td>
-                                        <td>{proveedor.numeroCelular}</td>
+                                        <td>{proveedor.nombre_contacto}</td>
+                                        <td>{proveedor.celular_contacto}</td>
                                         <td>{proveedor.email}</td>
-                                        <td>{proveedor.actividadEconomica}</td>
-                                        <td className="text-center">
+                                        <td>{proveedor.actividad_economica}</td>
+                                        <td className="text-center" width="15%">
                                             <Link
                                                 to={`/producto/${proveedor.id}`}
-                                                className="btn btn-primary mr-2"
+                                                className="btn btn-primary px-4 py-2 fs-6 me-2"
+                                                size="lg"
                                                 aria-label="Editar producto"
                                             >
                                                 <i className="fas fa-edit"></i>
                                             </Link>
                                             <Button
                                                 variant="danger"
-                                                size="sm"
+                                                className="px-4 py-2 fs-6"
+                                                size="lg"
                                                 onClick={() => handleDelete(proveedor)}
                                                 aria-label="Eliminar proveedor"
                                             >
@@ -144,8 +151,8 @@ const ProveedorList = () => {
                         <Form.Group className="mb-3">
                             <Form.Label>Tipo de Identidad</Form.Label>
                             <Form.Select
-                                name="tipoIdentidad"
-                                value={form.tipoIdentidad}
+                                name="tipo_identificacion"
+                                value={form.tipo_identificacion}
                                 onChange={handleChange}
                                 required
                             >
@@ -159,27 +166,18 @@ const ProveedorList = () => {
                             <Form.Label>Número de Identidad</Form.Label>
                             <Form.Control
                                 type="text"
-                                name="numeroIdentidad"
-                                value={form.numeroIdentidad}
+                                name="numero_identificacion"
+                                value={form.numero_identificacion}
                                 onChange={handleChange}
                                 required
                             />
                         </Form.Group>
                         <Form.Group className="mb-3">
-                            <Form.Label>Razón Social</Form.Label>
+                            <Form.Label>Razón Social/Nombre</Form.Label>
                             <Form.Control
                                 type="text"
-                                name="razonSocial"
-                                value={form.razonSocial}
-                                onChange={handleChange}
-                            />
-                        </Form.Group>
-                        <Form.Group className="mb-3">
-                            <Form.Label>Nombre</Form.Label>
-                            <Form.Control
-                                type="text"
-                                name="nombre"
-                                value={form.nombre}
+                                name="razon_social"
+                                value={form.razon_social}
                                 onChange={handleChange}
                             />
                         </Form.Group>
@@ -197,8 +195,8 @@ const ProveedorList = () => {
                             <Form.Label>Nombre Contacto</Form.Label>
                             <Form.Control
                                 type="text"
-                                name="nombreContacto"
-                                value={form.nombreContacto}
+                                name="nombre_contacto"
+                                value={form.nombre_contacto}
                                 onChange={handleChange}
                                 required
                             />
@@ -207,8 +205,8 @@ const ProveedorList = () => {
                             <Form.Label>Número de Celular</Form.Label>
                             <Form.Control
                                 type="text"
-                                name="numeroCelular"
-                                value={form.numeroCelular}
+                                name="celular_contacto"
+                                value={form.celular_contacto}
                                 onChange={handleChange}
                                 required
                             />
@@ -227,8 +225,8 @@ const ProveedorList = () => {
                             <Form.Label>Actividad Económica</Form.Label>
                             <Form.Control
                                 type="text"
-                                name="actividadEconomica"
-                                value={form.actividadEconomica}
+                                name="actividad_economica"
+                                value={form.actividad_economica}
                                 onChange={handleChange}
                                 required
                             />

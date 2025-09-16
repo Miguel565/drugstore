@@ -4,10 +4,16 @@ import { modifyProveedor } from "../reducers/proveedorReducer"
 import { useNavigate } from "react-router-dom"
 import Swal from 'sweetalert2'
 import swalContent from 'sweetalert2-react-content'
+import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import { useState } from "react"
 
-const Proveedor = ({ proveedor }) => {
+const Proveedor = () => {
+    const { id } = useParams();
+  const proveedor = useSelector(state =>
+    state.proveedores.find(p => p.id === Number(id))
+  );
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const MySwal = swalContent(Swal)
@@ -18,15 +24,14 @@ const Proveedor = ({ proveedor }) => {
 
     const handleOpenModal = () => {
         setForm({
-            tipoIdentidad: proveedor.tipoIdentidad || '',
-            numeroIdentidad: proveedor.numeroIdentidad || '',
-            razonSocial: proveedor.razonSocial || '',
-            nombre: proveedor.nombre || '',
+            tipo_identificacion: proveedor.tipo_identificacion || '',
+            numero_identificacion: proveedor.numero_identificacion || '',
+            razon_social: proveedor.razonSocial || '',
             direccion: proveedor.direccion || '',
-            nombreContacto: proveedor.nombreContacto || '',
-            numeroCelular: proveedor.numeroCelular || '',
+            nombre_contacto: proveedor.nombre_contacto || '',
+            celular_contacto: proveedor.celular_contacto || '',
             email: proveedor.email || '',
-            actividadEconomica: proveedor.actividadEconomica || ''
+            actividad_economica: proveedor.actividad_economica || ''
         })
         setFormError('')
         setShowModal(true)
@@ -66,13 +71,13 @@ const Proveedor = ({ proveedor }) => {
             <Card>
                 <Card.Body>
                     <h2>Detalle del Proveedor</h2>
-                    <h3>{proveedor.razonSocial} || {proveedor.nombre}</h3>
-                    <p>{proveedor.tipoIdentidad} {proveedor.numeroIdentidad}</p>
-                    <p>Contacto: {proveedor.nombreContacto}</p>
-                    <p>Numero Celular: {proveedor.numeroCelular} </p>
+                    <h3>{proveedor.razon_Social}</h3>
+                    <p>{proveedor.tipo_identificacion} {proveedor.numero_identificacion}</p>
+                    <p>Contacto: {proveedor.nombre_contacto}</p>
+                    <p>Numero Celular: {proveedor.celular_contacto} </p>
                     <p>Dirección: {proveedor.direccion} </p>
                     <p>Correo Electronico: {proveedor.email}</p>
-                    <p>Actividad Economica: {proveedor.actividadEconomica}</p>
+                    <p>Actividad Economica: {proveedor.actividad_economica}</p>
                     <Button variant="warning" className="mt-3" onClick={handleOpenModal}>
                         <i className="fas fa-edit"></i> Editar Proveedor
                     </Button>

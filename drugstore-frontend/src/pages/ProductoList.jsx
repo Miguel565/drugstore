@@ -5,19 +5,24 @@ import { Card, Container, Table } from "react-bootstrap"
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import swalContent from 'sweetalert2-react-content'
+import { useEffect } from 'react'
+import { initializeProductos } from '../reducers/productoReducer'
 
 const ProductoList = () => {
     const productos = useSelector(state => state.productos)
     const dispatch = useDispatch()
     const MySwal = swalContent(Swal)
 
+    useEffect(() => {
+        dispatch(initializeProductos())
+    }, [dispatch])
+
     const initialForm = {
         codigo: '',
         nombre: '',
-        estado: '',
+        estado: true,
         laboratorio: '',
         registro: '',
-        vence: '',
         cantidad: 0,
     }
 
@@ -42,7 +47,7 @@ const ProductoList = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // Validación
-        if (!form.codigo || !form.nombre || !form.estado || !form.vence
+        if (!form.codigo || !form.nombre || !form.estado
             || !form.registro || !form.cantidad || !form.laboratorio) {
             setFormError('Todos los campos son obligatorios.')
             return;
