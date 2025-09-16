@@ -59,7 +59,7 @@ CREATE INDEX idx_recepciones_factura ON recepciones(numero_factura);
 
 ## Diagrama y Diccionario de Datos
 ### Diagrama Entidad-Relación
-# Diagrama Entidad-Relación - Drugstore
+#### Diagrama Entidad-Relación - Drugstore
 
 ```mermaid
 erDiagram
@@ -136,18 +136,18 @@ https://github.com/Miguel565/drugstore
 •	Lenguaje: JavaScript (ES6+)
 •	Estilos: CSS / TailwindCSS
 •	Gestor de dependencias: npm
-•	Herramientas adicionales: React Router, Axios, neon.tech (gestor base de datos remoto)
+•	Herramientas adicionales: React Router, Axios, [neon.tech](https://neon.com/) (gestor base de datos remoto)
 •	Versión recomendada de React: 18.x
 •	Versión de TailwindCSS: 3.x
 
 ### Instalación y Despliegue
 
-1. Clonar el repositorio
+1. Clonar el repositorio:
 ```bash
    git clone https://github.com/Miguel565/drugstore.git
    cd drugstore
 ```
-2. Instalar dependencias en fornt-end y back-end
+2. Instalar dependencias en fornt-end y back-end:
 
 ```bash
     cd drugstoree-frontend
@@ -157,6 +157,11 @@ https://github.com/Miguel565/drugstore
     cd drugstoree-backend
     npm init -y
 ```
+Tamto para el Back-end y Front-end:
+```bash
+    npm run dev
+```
+
 3. Configurar variables de entorno en un archivo .env:
 
 ```env
@@ -176,10 +181,12 @@ https://github.com/Miguel565/drugstore
    - Crear un nuevo Web Service en Render.com
    - Conectar el repositorio GitHub
    - Configurar las variables de entorno en el panel de Render
-   - Deploy automático 
+   - Deploy automático
+   - [Despliegue Back-end](https://drugstore-backend-suia.onrender.com)
 
 ### Despliegue front-end en Render
    - Crear un nuevo Web Static en Render.com
    - Conectar el repositorio GitHub
    - Configurar las variables de entorno en el panel de Render
    - Deploy automático 
+   -[Despliegue Front-end](https://drugstore-ytuy.onrender.com)
