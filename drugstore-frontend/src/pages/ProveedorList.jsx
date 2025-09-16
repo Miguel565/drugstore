@@ -143,13 +143,17 @@ const ProveedorList = () => {
                     <Modal.Body>
                         <Form.Group className="mb-3">
                             <Form.Label>Tipo de Identidad</Form.Label>
-                            <Form.Control
-                                type="text"
+                            <Form.Select
                                 name="tipoIdentidad"
                                 value={form.tipoIdentidad}
                                 onChange={handleChange}
                                 required
-                            />
+                            >
+                                <option value="">Seleccione...</option>
+                                <option value="dni">DNI</option>
+                                <option value="cedula">Cédula</option>
+                                <option value="pasaporte">Pasaporte</option>
+                            </Form.Select>
                         </Form.Group>
                         <Form.Group className="mb-3">
                             <Form.Label>Número de Identidad</Form.Label>
