@@ -1,5 +1,5 @@
 # Drugstore
---- 
+
 Sistema de gestión para una droguería. Permite administrar proveedores, productos y recepciones de mercancía, asegurando la trazabilidad de inventarios y registros.
 🗂️ Contenido
 - Script de Base de Datos (DDL)
@@ -8,8 +8,8 @@ Sistema de gestión para una droguería. Permite administrar proveedores, produc
 - Especificación Técnica
 - Instalación y Despliegue
 
-📜 Script de Base de Datos (DDL)
-
+### Script de Base de Datos (DDL)
+---
 CREATE DATABASE drugstore;
 
 \c drugstore;
@@ -103,6 +103,7 @@ erDiagram
 
 ```
 ### Diccionario de Datos
+```mermaid
 Tabla	Campo	Tipo	Descripción
 proveedores	id	SERIAL PK	Identificador único
 proveedores	tipo_identificacion	VARCHAR(20)	Cédula, NIT, etc.
@@ -111,6 +112,8 @@ productos	codigo	VARCHAR(20)	Código único del producto
 productos	estado	VARCHAR(10)	Activo / Inactivo
 recepciones	numero_factura	VARCHAR(50)	Número de factura asociado
 recepciones	cantidad INT	Cantidad recibida
+
+```
 
 ### Repositorio del Código Fuente
 El código está disponible en un repositorio público en GitHub:
@@ -136,12 +139,12 @@ https://github.com/Miguel565/drugstore
 •	Versión de TailwindCSS: 3.x
 
 ### Instalación y Despliegue
-1.	1. Clonar el repositorio
+1. Clonar el repositorio
    git clone https://github.com/Miguel565/drugstore.git
    cd drugstore
-2.	2. Instalar dependencias
+2. Instalar dependencias
    npm install
-3.	3. Configurar variables de entorno en un archivo .env:
+3. Configurar variables de entorno en un archivo .env:
    DB_HOST=localhost
    DB_PORT=5432
    DB_NAME=drugstore
@@ -149,7 +152,7 @@ https://github.com/Miguel565/drugstore
    DB_PASSWORD=tu_password
    PORT=3000
 4. Crear la base de datos ejecutando el script drugstore.sql en PostgreSQL.
-5.	5. Iniciar servidor local
+5. Iniciar servidor local
    npm start
    Aplicación disponible en: http://localhost:3000
 
