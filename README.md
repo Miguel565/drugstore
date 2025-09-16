@@ -1,7 +1,8 @@
 # Drugstore
 
 Sistema de gestión para una droguería. Permite administrar proveedores, productos y recepciones de mercancía, asegurando la trazabilidad de inventarios y registros.
-🗂️ Contenido
+
+### Contenido
 - Script de Base de Datos (DDL)
 - Diagrama y Diccionario de Datos
 - Repositorio del Código Fuente
@@ -114,20 +115,12 @@ erDiagram
 | **recepciones** | numero_factura        | VARCHAR(50)   | Número de factura asociado      |
 | recepciones  | cantidad              | INT           | Cantidad recibida              |
 
-Tabla	Campo	Tipo	Descripción
-proveedores	id	SERIAL PK	Identificador único
-proveedores	tipo_identificacion	VARCHAR(20)	Cédula, NIT, etc.
-proveedores	numero_identificacion	VARCHAR(30)	Único por proveedor
-productos	codigo	VARCHAR(20)	Código único del producto
-productos	estado	VARCHAR(10)	Activo / Inactivo
-recepciones	numero_factura	VARCHAR(50)	Número de factura asociado
-recepciones	cantidad INT	Cantidad recibida
-
-
 ### Repositorio del Código Fuente
 El código está disponible en un repositorio público en GitHub:
 https://github.com/Miguel565/drugstore
-⚙️ Especificación Técnica
+
+### Especificación Técnica
+
 🔹 Backend
 •	Lenguaje de programación: JavaScript (ES6+)
 •	Framework: Node.js, Express.js
@@ -143,23 +136,37 @@ https://github.com/Miguel565/drugstore
 •	Lenguaje: JavaScript (ES6+)
 •	Estilos: CSS / TailwindCSS
 •	Gestor de dependencias: npm
-•	Herramientas adicionales: React Router, Axios
+•	Herramientas adicionales: React Router, Axios, neon.tech (gestor base de datos remoto)
 •	Versión recomendada de React: 18.x
 •	Versión de TailwindCSS: 3.x
 
 ### Instalación y Despliegue
+
 1. Clonar el repositorio
+```bash
    git clone https://github.com/Miguel565/drugstore.git
    cd drugstore
-2. Instalar dependencias
-   npm install
+```
+2. Instalar dependencias en fornt-end y back-end
+
+```bash
+    cd drugstoree-frontend
+    npm install
+```
+```bash
+    cd drugstoree-backend
+    npm init -y
+```
 3. Configurar variables de entorno en un archivo .env:
+
+```env
    DB_HOST=localhost
    DB_PORT=5432
    DB_NAME=drugstore
    DB_USER=postgres
    DB_PASSWORD=tu_password
    PORT=3000
+```
 4. Crear la base de datos ejecutando el script drugstore.sql en PostgreSQL.
 5. Iniciar servidor local
    npm start
