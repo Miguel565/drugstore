@@ -6,7 +6,6 @@ const productosRouter = require('./controllers/productos')
 const proveedoresRouter = require('./controllers/proveedores')
 const registrosRouter = require('./controllers/registros')
 const middleware = require('./utils/middleware')
-const logger = require('./utils/logger')
 
 app.use(cors())
 app.use(express.json())
