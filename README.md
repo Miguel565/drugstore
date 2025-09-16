@@ -103,7 +103,17 @@ erDiagram
 
 ```
 ### Diccionario de Datos
-```mermaid
+
+| Tabla        | Campo                 | Tipo          | Descripción                    |
+|--------------|-----------------------|---------------|--------------------------------|
+| **proveedores** | id                    | SERIAL PK     | Identificador único             |
+| proveedores  | tipo_identificacion   | VARCHAR(20)   | Cédula, NIT, etc.              |
+| proveedores  | numero_identificacion | VARCHAR(30)   | Único por proveedor            |
+| **productos**   | codigo                | VARCHAR(20)   | Código único del producto       |
+| productos    | estado                | VARCHAR(10)   | Activo / Inactivo              |
+| **recepciones** | numero_factura        | VARCHAR(50)   | Número de factura asociado      |
+| recepciones  | cantidad              | INT           | Cantidad recibida              |
+
 Tabla	Campo	Tipo	Descripción
 proveedores	id	SERIAL PK	Identificador único
 proveedores	tipo_identificacion	VARCHAR(20)	Cédula, NIT, etc.
@@ -113,7 +123,6 @@ productos	estado	VARCHAR(10)	Activo / Inactivo
 recepciones	numero_factura	VARCHAR(50)	Número de factura asociado
 recepciones	cantidad INT	Cantidad recibida
 
-```
 
 ### Repositorio del Código Fuente
 El código está disponible en un repositorio público en GitHub:
