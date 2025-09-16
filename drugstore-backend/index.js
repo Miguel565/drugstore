@@ -1,4 +1,4 @@
-const app = require('./app') // Real express
+const app = require('./app')
 const { PORT } = require('./utils/config')
 const { info } = require('./utils/logger')
 
