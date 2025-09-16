@@ -11,6 +11,7 @@ Sistema de gestión para una droguería. Permite administrar proveedores, produc
 
 ### Script de Base de Datos (DDL)
 ---
+```sql
 CREATE DATABASE drugstore;
 
 \c drugstore;
@@ -56,6 +57,7 @@ CREATE TABLE recepciones (
 CREATE INDEX idx_proveedores_identificacion ON proveedores(numero_identificacion);
 CREATE INDEX idx_productos_codigo ON productos(codigo);
 CREATE INDEX idx_recepciones_factura ON recepciones(numero_factura);
+```
 
 ## Diagrama y Diccionario de Datos
 ### Diagrama Entidad-Relación
