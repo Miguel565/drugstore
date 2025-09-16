@@ -5,3 +5,5 @@ const pool = new Pool({
     connectionString: DATABASE_URL,
     ssL: { rejectUnauthorized: true }
 });
+
+module.exports = pool;
