@@ -1,5 +1,5 @@
 # Drugstore
-
+--- 
 Sistema de gestión para una droguería. Permite administrar proveedores, productos y recepciones de mercancía, asegurando la trazabilidad de inventarios y registros.
 🗂️ Contenido
 - Script de Base de Datos (DDL)
@@ -101,6 +101,7 @@ erDiagram
     PROVEEDORES ||--o{ RECEPCIONES : "entrega"
     PRODUCTOS ||--o{ RECEPCIONES : "incluye"
 
+```
 ### Diccionario de Datos
 Tabla	Campo	Tipo	Descripción
 proveedores	id	SERIAL PK	Identificador único
@@ -111,13 +112,13 @@ productos	estado	VARCHAR(10)	Activo / Inactivo
 recepciones	numero_factura	VARCHAR(50)	Número de factura asociado
 recepciones	cantidad INT	Cantidad recibida
 
-📂 Repositorio del Código Fuente
+### Repositorio del Código Fuente
 El código está disponible en un repositorio público en GitHub:
-👉 https://github.com/Miguel565/drugstore
+https://github.com/Miguel565/drugstore
 ⚙️ Especificación Técnica
 🔹 Backend
-•	Lenguaje de programación: Node.js
-•	Framework: Express.js
+•	Lenguaje de programación: JavaScript (ES6+)
+•	Framework: Node.js, Express.js
 •	Gestor de dependencias: npm
 •	ORM: Sequelize
 •	Base de datos: PostgreSQL v17
@@ -133,7 +134,8 @@ El código está disponible en un repositorio público en GitHub:
 •	Herramientas adicionales: React Router, Axios
 •	Versión recomendada de React: 18.x
 •	Versión de TailwindCSS: 3.x
-🚀 Instalación y Despliegue
+
+### Instalación y Despliegue
 1.	1. Clonar el repositorio
    git clone https://github.com/Miguel565/drugstore.git
    cd drugstore
@@ -146,12 +148,19 @@ El código está disponible en un repositorio público en GitHub:
    DB_USER=postgres
    DB_PASSWORD=tu_password
    PORT=3000
-4.	4. Crear la base de datos ejecutando el script drugstore.sql en PostgreSQL.
+4. Crear la base de datos ejecutando el script drugstore.sql en PostgreSQL.
 5.	5. Iniciar servidor local
    npm start
    Aplicación disponible en: http://localhost:3000
-6.	6. Despliegue en Render
+
+### Despliegue back-end en Render
    - Crear un nuevo Web Service en Render.com
+   - Conectar el repositorio GitHub
+   - Configurar las variables de entorno en el panel de Render
+   - Deploy automático 
+
+### Despliegue front-end en Render
+   - Crear un nuevo Web Static en Render.com
    - Conectar el repositorio GitHub
    - Configurar las variables de entorno en el panel de Render
    - Deploy automático 
